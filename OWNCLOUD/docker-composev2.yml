@@ -1,0 +1,19 @@
+---
+version: "3"
+
+services: 
+    owncloud:
+      image: owncloud:latest
+      restart: always
+      ports:
+          - "8080:80"
+      volumes:
+          - ./apps:/var/www/html/apps
+          - ./config:/var/www/html/config
+          - ./data:/var/www/html/data
+
+    mysql:
+      image: mariadb
+      restart: always
+      environment:
+          MYSQL_ROOT_PASSWORD: example

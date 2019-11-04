@@ -1,0 +1,16 @@
+---
+version: "3"
+
+services: 
+   nxfilter:
+      image: packetworks/nxfilter-base:latest
+      ports:
+          - "80:80"
+          - "443:443"
+          - "53:53/udp"
+          - "19002-19004:19002-19004"
+      volumes:
+          - ./nxfilter-conf:/nxfilter/conf
+          - ./nxfilter-log:/nxfilter/log
+          - ./nxfilter-db:/nxfilter/db
+    
