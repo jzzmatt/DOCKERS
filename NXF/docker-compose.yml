@@ -4,6 +4,7 @@ version: "3"
 services: 
    nxfilter:
       image: packetworks/nxfilter-base:latest
+      restart: always
       ports:
           - "80:80"
           - "443:443"
